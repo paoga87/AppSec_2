@@ -9,3 +9,10 @@ Tasked with creating a Web service to provide spell checking capability (using t
 3. Mock Two-factor authentication: /your/webroot/login
 4. Text submission: /your/webroot/spell_check
 5. Result retrieval: /your/webroot/spell_check
+
+# Usage
+At the time of development, this was created using Python 3. You need to make sure you also have Flask installed.
+
+## To run the code
+Go into the root directory and type:
+`flask run`
