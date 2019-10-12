@@ -1,12 +1,15 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, logging, request
 from flask_sqlalchemy import SQLAlchemy
 
-# Base directory setup
+# Basic setups
 basedir  = '127.0.0.1:5000'
+db = SQLAlchemy()
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'WxND4o83j4K4iO3762'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-db = SQLAlchemy(app)
+
+db.init_app(app)
 
 class user(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -18,21 +21,21 @@ class user(db.Model):
 def index():
     return render_template("index.html")
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET','POST'])
 def register():
     if request.method == 'POST':
         uname = request.form['uname']
         password = request.form['pword']
         twofa = request.form['2fa']
 
-        register = user(username = uname, password = password, twofa = twofa)
+        register = user(username = uname, password = pword, twofa = twofa)
         db.session.add(register)
         db.session.commit()
 
         return redirect(url_for('login'))
     return render_template("register.html")
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template("login.html")
 
