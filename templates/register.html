@@ -13,22 +13,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row" style="margin-top: 40px">
             <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <form method="POST">
                         <div class="form-group">
                             <label for="email">Username: </label>
-                            <input type="text" name="uname" class="form-control" id="uname">
+                            <input type="text" name="uname" class="form-control" id="uname" placeholder="Enter a unique username">
                         </div>
                         <div class="form-group">
                             <label for="email">Password: </label>
-                            <input type="password" name="pword" class="form-control" id="pword">
+                            <input type="password" name="pword" class="form-control" id="pword" placeholder="Enter a password">
                         </div>
                         <div class="form-group">
                             <label for="tel">Two-Factor Authentication: </label>
-                            <input type="tel" name="2fa" class="form-control" id="2fa">
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="2fa" class="form-control" id="2fa" placeholder="Tel. format: 123-456-7890">
                         </div>
                         <button type="submit" class="btn form-control btn-default">Register</button>
                     </form>
