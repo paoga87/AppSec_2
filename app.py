@@ -37,6 +37,10 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'GET':
+        uname = request.form.get['uname']
+        password = request.form.get['pword']
+        return redirect(url_for('spell'))
     return render_template("login.html")
 
 @app.route('/spell_check')
