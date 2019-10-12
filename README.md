@@ -1,5 +1,5 @@
-# AppSec_3
-NYU's CS-GY 9163 Application Security course - Assignment 3
+# AppSec_flask
+NYU's CS-GY 9163 Application Security course - Flask Assignment
 
 # Program Description
 Tasked with creating a Web service to provide spell checking capability (using the program created in [Assignment 1](https://github.com/paoga87/AppSec)) to registered users. In order to achieve this, you Web service must provide at least the following functionality, at the following locations:
